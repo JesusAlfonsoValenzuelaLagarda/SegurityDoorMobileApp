@@ -1,0 +1,8 @@
+//Imagen de fondo
+ion-content.background{
+  --background: url(../Img/Background.jpg) 0 0/100% 100%;
+}
+//Alinear los input donde se colocan el usuario y contraseña.
+ion-row {
+  text-align: center;
+  }

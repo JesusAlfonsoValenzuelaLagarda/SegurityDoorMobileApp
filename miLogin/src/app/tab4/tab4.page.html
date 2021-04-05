@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+<ion-grid fixed>
+  <ion-row>
+    <ion-col class="ion-text-center" style="font-size: large;">
+      <h4>Ingrese su usuario y contraseña.</h4>
+    </ion-col>
+  </ion-row>
+  <ion-row >
+
+    <ion-col><input color= "light" type="text" [(ngModel)]="usuario" placeholder="Usuario" class="ion-text-center"/></ion-col>
+  </ion-row>
+  <ion-row>
+
+    <ion-col><input type="text" [(ngModel)]="pass" placeholder="Contraseña" class="ion-text-center"/></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button class="ion-padding" fill="outline"shape="round" expand="full" (click)="validarUsuario()" color="tertiary">
+        Ingresar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<p style="text-align: center; color: red;">{{mensaje}}</p>
+
+
+</ion-content>

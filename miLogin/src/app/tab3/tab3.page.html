@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Sesión
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-grid style="border-width: initial;">
+    <ion-row>
+      <ion-text>
+        <h1>Deseo cerrar sesión</h1>
+      </ion-text>
+      <ion-col>
+        <ion-button expand="full" (click)="cerrar()" color="tertiary">Cerrar sesión</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-explore-container name="Tab 3 page"></app-explore-container>
+</ion-content>
