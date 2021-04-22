@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient  } from '@angular/common/http';
+import { usuariobd } from './usuariobd'
 
 @Component({
   selector: 'app-login',
@@ -7,36 +9,47 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  usuario:string;
-  pass:string;
-  mensaje:string;
-  constructor(public router:Router) { }
+  url="http://localhost:5000/User/X";//URL del localhost que usamos
+  user:string;
+  password:string;
+  menssage:string;
+  productos:usuariobd[];
+  usu:usuariobd;
+  constructor(public router:Router, private http:HttpClient) { }
   ngOnInit() {
   }
+
+
+
   validarUsuario(){
-    if(this.usuario=="usuario")
+
+    this.http.get<usuariobd>(this.url+"/"+this.password).subscribe(resp=>{
+      this.usu=resp;
+    })
+
+    if(this.user==this.usu.user)
     {
-      if(this.pass=="1234")
+      if(this.password==this.usu.password)
       {
-        this.usuario="";
-        this.pass="";
-        this.mensaje="";
+        this.user="";
+        this.password="";
+        this.menssage="";
         window.localStorage.setItem('sesion','iniciada');
         this.router.navigate(['']);
       }
       else
       {
-        this.mensaje="Contraseña Incorrecta"
+        this.menssage="Contraseña Incorrecta"
       }
     }
     else
     {
-      this.mensaje="Usuario Incorrecto";
+      this.menssage="Usuario Incorrecto";
     }
 
   }
   RegistrarUsuario(){
-    
+
   }
 
 }

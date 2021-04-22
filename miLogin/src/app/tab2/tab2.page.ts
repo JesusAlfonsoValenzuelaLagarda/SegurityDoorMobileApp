@@ -8,10 +8,11 @@ import { producto } from './producto'
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  url="http://apiproductos.somee.com/api/productos";
+  url="http://localhost:5000/User/AddAccessControl"; //URL localhost que usemos
   clave:string;
   nombre:string;
-  precio:number;
+  fecha:string;
+  tipo:string;
   productos:producto[];
   pro:producto;
 
